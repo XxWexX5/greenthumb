@@ -4,13 +4,17 @@
   "description": "Simple Parcel Sandbox",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open"
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html",
+    "deploy": "yarn build && surge"
   },
   "dependencies": {
-    "parcel": "1.12.4"
+    "parcel": "1.12.4",
+    "surge": "^0.23.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.6.1"
+    "parcel-bundler": "^1.6.1",
+    "sass": "^1.43.3"
   },
   "keywords": []
 }
