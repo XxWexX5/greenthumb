@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
-    "deploy": "yarn build && surge"
+    "deploy": "yarn build && surge ./dist"
   },
   "dependencies": {
     "parcel": "1.12.4",
