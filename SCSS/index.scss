@@ -1,6 +1,8 @@
 @import "fonts-size.scss";
+@import "colors.scss";
 
 body {
     font-family: "Montserrat", sans-serif;
     font-size: $font-01;
+    color: $color-green-dark-02;
 }
