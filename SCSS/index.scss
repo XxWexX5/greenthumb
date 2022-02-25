@@ -5,4 +5,6 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: $font-01;
     color: $color-green-dark-02;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
