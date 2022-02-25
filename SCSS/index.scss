@@ -1,10 +1,24 @@
 @import "fonts-size.scss";
 @import "colors.scss";
+@import "reset-styles.scss";
 
 body {
     font-family: "Montserrat", sans-serif;
-    font-size: $font-01;
+    font-size: 62.5%;
     color: $color-green-dark-02;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    background-color: $color-gray-light;
+
+    .container-logo {
+        svg {
+            * {
+                fill: #F00;
+            }
+        }
+    }
+
+    .title {
+        font-size: $font-01;
+    }
 }
