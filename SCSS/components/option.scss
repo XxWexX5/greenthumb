@@ -1,0 +1,52 @@
+.container-option {
+    .container-image {
+        width: 100%;
+        max-width: 8em;
+        height: auto;
+        margin-bottom: 0.85em;
+
+        .image,
+        img, svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .label-text {
+        font-size: $font-03;
+        color: $color-gray-light;
+    }
+
+    .wrapper-input {
+        position: relative;
+        border: 1px solid $color-gray-light;
+        border-radius: 5em;
+        margin-top: 1.85em;
+        width: 100%;
+        padding: 1em;
+
+        &:after {
+            content: '';
+            background-image: url(../images/arrow-drop-down.svg);
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 2em;
+            height: 2em;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 1.65em;
+            margin: auto;
+        }
+
+        .select {
+            width: 100%;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            text-overflow: '';
+            color: $color-gray-light;
+        }
+    }
+}
