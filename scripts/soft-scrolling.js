@@ -5,14 +5,21 @@ arrowDown.addEventListener("click", scrollToIdOnClick);
 function scrollToIdOnClick( event ) {
     event.preventDefault();
 
-    const element = event.target.parentElement;
+    console.log(event.target);
+
+    const element = event.target;
     const goTo = getScrollTopByHref( element );
 
     scrollToPosition( goTo );
 }
 
 function getScrollTopByHref( element ) {
-    const id = element.getAttribute("href");
+    if( element.getAttribute("href") ) {
+        const id = element.getAttribute("href");
+        return document.querySelector(id).offsetTop;
+    }
+        
+    const id = element.parentElement.getAttribute("href");    
     return document.querySelector(id).offsetTop;
 }
 

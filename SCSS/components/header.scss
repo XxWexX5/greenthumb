@@ -68,11 +68,25 @@
         opacity: 0;
         animation: 1s animation-move-down forwards;
         animation-delay: 1.85s;
+        position: relative;
+
+        &:after {
+            content: '';
+            background-image: url(../images/arrow-down.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 4em;
+            height: 4em;
+            margin-top: 2.35em;
+            display: inline-block;
+            transition: .3s transform ease-in-out;
+        }
 
         @keyframes animation-move-down {
             0% {
                 opacity: 0;
-                transform: translateY(-35px);
+                transform: translateY(-45px);
             }
             100% {
                 opacity: 1;
@@ -87,7 +101,7 @@
         &:hover,
         &:active,
         &:focus {
-            .container-image-arrow-down {
+            &:after {
                 transform: translateY(.85em);
             }
         }
@@ -123,10 +137,6 @@
         .title {
             font-size: $font-02;
             color: $color-white;
-        }
-
-        .container-image-arrow-down {
-            margin-top: 1.65em;
         }
     }
 }
