@@ -1,6 +1,7 @@
+@import "reset-styles.scss";
+@import "mixins.scss";
 @import "fonts-size.scss";
 @import "colors.scss";
-@import "reset-styles.scss";
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -10,15 +11,140 @@ body {
     -webkit-font-smoothing: antialiased;
     background-color: $color-gray-light;
 
-    .container-logo {
-        svg {
-            * {
-                fill: #F00;
+    .header {
+        width: 100%;
+        height: 100vh;
+        background-color: $color-green-light;
+        position: relative;
+
+        &:before {
+            content: '';
+            background-image: url(../images/mobile-leaves.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+            width: 100%;
+            height: 54em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+            opacity: 0;
+            animation: animation-mobile-leaves-top .85s forwards;
+            animation-delay: .4s;
+
+            @keyframes animation-mobile-leaves-top {
+                0% {
+                    opacity: .35;
+                    transform: translateY(-300px) scaleY(1);
+                }
+                80% {
+                    opacity: .85;
+                    transform: translateY(0) scaleY(1.45);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0) scaleY(1);
+                }
             }
         }
-    }
 
-    .title {
-        font-size: $font-01;
+        &:after {
+            content: '';
+            background-image: url(../images/mobile-plant-person.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            height: 26em;
+            position: absolute;
+            bottom: 3em;
+            left: 0;
+            right: 0;
+            margin: auto;
+            z-index: 0;
+            animation: animation-mobile-plant-person .65s forwards;
+
+            @keyframes animation-mobile-plant-person {
+                0% {
+                    opacity: .35;
+                    transform: translateY(80px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .wrapper-move-down {
+            display: inline-block;
+            cursor: pointer;
+            opacity: 0;
+            animation: 1s animation-move-down forwards;
+            animation-delay: 1.85s;
+
+            @keyframes animation-move-down {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-35px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .container-image-arrow-down {
+                transition: .45s transform ease-in-out;
+            }
+            
+            &:hover,
+            &:focus {
+                .container-image-arrow-down {
+                    transform: translateY(.85em);
+                }
+            }
+        }
+
+        .container {
+            @include spacing-internal;
+            position: relative;
+            z-index: 1;
+
+            .container-logo {
+                margin-bottom: 3em;
+                opacity: 0;
+                animation: .35s animation-logo forwards;
+                animation-delay: 1s;
+
+                @keyframes animation-logo {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+                
+                svg {
+                    * {
+                        fill: #F00;
+                    }
+                }
+            }
+            
+            .title {
+                font-size: $font-02;
+                color: $color-white;
+            }
+    
+            .container-image-arrow-down {
+                margin-top: 1.65em;
+            }
+        }
     }
 }
