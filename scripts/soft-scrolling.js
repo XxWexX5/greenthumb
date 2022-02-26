@@ -1,11 +1,19 @@
 const arrowDown = document.getElementById("wrapper-move-down");
+const buttonTop = document.getElementById("button-go-top");
 
 arrowDown.addEventListener("click", scrollToIdOnClick);
+buttonTop.addEventListener("click", scrollToTop);
+
+function scrollToTop( event ) {
+    event.preventDefault();
+
+    console.log("Akii")
+
+    smoothScrollTo(  0, 0, 650 );
+}
 
 function scrollToIdOnClick( event ) {
     event.preventDefault();
-
-    console.log(event.target);
 
     const element = event.target;
     const goTo = getScrollTopByHref( element );
