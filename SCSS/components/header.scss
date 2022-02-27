@@ -7,11 +7,11 @@
     &:before {
         content: '';
         background-image: url(../images/mobile-leaves.png);
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: top center;
         width: 100%;
-        height: 63vh;
+        height: 560px;
         position: absolute;
         top: 0;
         left: 0;
@@ -24,7 +24,7 @@
 
         @include for-mobile {
             background-size: 100% 95%;
-            height: 650px;
+            height: 500px;
         }
 
         @include for-tablet {
