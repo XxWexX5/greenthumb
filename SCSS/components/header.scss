@@ -7,11 +7,11 @@
     &:before {
         content: '';
         background-image: url(../images/mobile-leaves.png);
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: top center;
         width: 100%;
-        height: 57.5vh;
+        height: 72vh;
         position: absolute;
         top: 0;
         left: 0;
@@ -21,6 +21,11 @@
         opacity: 0;
         animation: animation-mobile-leaves-top .85s forwards;
         animation-delay: .4s;
+
+        @include for-mobile {
+            background-size: 100% 95%;
+            height: 650px;
+        }
 
         @include for-tablet {
             background-size: contain;
