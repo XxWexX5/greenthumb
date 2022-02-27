@@ -7,7 +7,7 @@
 @import "components/option.scss";
 @import "components/no-results.scss";
 @import "components/results.scss";
-@import "components/card.scss";
+@import "components/product.scss";
 
 body {
     font-family: "Montserrat", sans-serif;
@@ -16,7 +16,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     background-color: $color-white;
-
+    
     .main-panel {
         background-color: $color-white;
         width: 100%;
@@ -35,6 +35,7 @@ body {
     }
 
     .container-result {
+        overflow-x: hidden;
         background-color: $color-green-light-02;
 
         .hide {

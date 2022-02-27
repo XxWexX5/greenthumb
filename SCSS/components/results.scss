@@ -26,7 +26,15 @@
     }
     
     > .main {
+        .wrapper-products {
+            overflow: auto;
+            display: flex;
+            padding-bottom: 3em;
 
+            .card-product + .card-product {
+                margin-left: 1.85em;
+            }
+        }
     }
     
     > .footer {
