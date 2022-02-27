@@ -1,10 +1,70 @@
 .card-product {
     background-color: $color-white;
-    padding: 3em 0 2em;
+    padding: 3em 0 3em;
     border-radius: .85em;
     position: relative;
     min-width: 25em;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @include for-desktop-up {
+        min-width: 23em;
+        padding-bottom: 0;
+    }
+
+    &:nth-child(1) {
+        .main-card .container-image {
+            @include for-desktop-up {
+                margin-top: 1.45em;
+                max-width: 26em;
+            }
+        }
+
+        .footer-card {
+            @include for-desktop-up {
+                display: flex;
+
+                .title-product {
+                    line-height: .85em;
+                    font-size: $font-02;
+                    width: 5.5em;
+                }
+
+                .text-price {
+                    font-size: $font-03;
+                    margin-bottom: 0.35em;
+                    display: inline-flex;
+                }
+
+                .row-02 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-end;
+                }
+
+                .wrapper-icons {
+                    .container-image.container-image {
+                        width: 3.45em;
+                        height: 3.2em;
+                    }
+
+                    .container-image.container-image-sun {
+                        width: 3.45em;
+                        height: 3.25em;
+                        margin-left: 1em;
+                    }
+
+                    .container-image.container-image-water {
+                        width: 3em;
+                        height: 2.85em;
+                    }
+                }
+            }
+        }
+    }
 
     .tag-favorite {
         position: absolute;
@@ -40,7 +100,7 @@
         .text {
             font-weight: bold;
             color: $color-white;
-            font-size: $font-05;
+            font-size: $font-06;
         }
     }
 
@@ -50,6 +110,10 @@
             max-width: 15em;
             height: auto;
             margin: 0 auto;
+
+            @include for-desktop-up {
+                max-width: 10.35em;
+            }
 
             .image,
             img {
@@ -62,17 +126,18 @@
     
     .footer-card {
         padding: 0 2em;
-        margin-top: 1.35em;
+        margin-top: 1em;
+        margin-bottom: 1em;
 
         .title-product {
             color: $color-green-dark-03;
-            font-size: $font-03;
+            font-size: $font-04;
             margin-bottom: 0.35em;
         }
 
         .text-price {
             color: $color-green-dark-03;
-            font-size: $font-03;
+            font-size: $font-04;
         }
 
         .wrapper-icons {

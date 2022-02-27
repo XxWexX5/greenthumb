@@ -24,11 +24,11 @@ function scrollToIdOnClick( event ) {
 function getScrollTopByHref( element ) {
     if( element.getAttribute("href") ) {
         const id = element.getAttribute("href");
-        return document.querySelector(id).offsetTop;
+        return (document.querySelector(id).offsetTop - 65);
     }
         
     const id = element.parentElement.getAttribute("href");    
-    return document.querySelector(id).offsetTop;
+    return (document.querySelector(id).offsetTop - 65);
 }
 
 function scrollToPosition( goTo ) {

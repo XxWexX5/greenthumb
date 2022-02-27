@@ -3,6 +3,27 @@
     height: 100vh;
     background-color: $color-green-light;
     position: relative;
+    overflow: hidden;
+
+    @include for-desktop-up {
+        background-image: url('../images/plantperson.png');
+        background-size: 0;
+        background-repeat: no-repeat;
+        height: 70vh;
+        animation: 1.15s animation-person-desktop forwards;
+        animation-delay: 1s;
+        
+        @keyframes animation-person-desktop {
+            0% {
+                background-position: -70% 47%;
+                background-size: 22%;
+            }
+            100% {
+                background-position: 75% 47%;
+                background-size: 22%;
+            }
+        }
+    }
 
     &:before {
         content: '';
@@ -31,6 +52,28 @@
             background-size: contain;
             background-repeat: repeat-x;
             background-position: unset;
+        }
+
+        @include for-desktop-up {
+            animation: animation-mobile-leaves-left-desktop 1.45s forwards;
+            background-image: url(../images/left-leaves.png);
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 77%;
+            background-size: contain;
+            margin: inherit;
+            left: -6%;
+        }
+
+        @keyframes animation-mobile-leaves-left-desktop {
+            0% {
+                opacity: .35;
+                transform: translateX(-300px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes animation-mobile-leaves-top {
@@ -64,6 +107,31 @@
         @include for-tablet {
             width: 36em;
             height: 32em;
+        }
+
+        @include for-desktop-up {
+            opacity: 0;
+            animation: animation-mobile-plant-right-desktop 1.45s forwards;
+            animation-delay: .65s;
+            background-image: url(../images/right-leaves.png);
+            height: 103%;
+            width: 50em;
+            background-size: cover;
+            margin: inherit;
+            right: -10%;
+            left: inherit;
+            bottom: -10px;
+        }
+
+        @keyframes animation-mobile-plant-right-desktop {
+            0% {
+                opacity: .35;
+                transform: translateX(200px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes animation-mobile-plant-person {

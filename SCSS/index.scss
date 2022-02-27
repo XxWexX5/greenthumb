@@ -24,6 +24,11 @@ body {
         width: 100%;
         padding-bottom: 5.5em;
 
+        @include for-desktop-up {
+            padding-top: 6em;
+            padding-bottom: 7em;
+        }
+
         .container {
             @include for-desktop-up {
                 width: 100%;
