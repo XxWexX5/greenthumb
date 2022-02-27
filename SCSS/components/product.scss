@@ -77,10 +77,19 @@
 
         .wrapper-icons {
             display: flex;
+            margin-right: -0.65em;
 
             .container-image {
                 width: 2.45em;
                 height: 2.2em;
+
+                &.container-image-water {
+                    width: 1.7em;
+                }
+
+                &.container-image-sun {
+                    width: 2.2em;
+                }
 
                 .image,
                 img {
