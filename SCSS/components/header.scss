@@ -7,11 +7,11 @@
     &:before {
         content: '';
         background-image: url(../images/mobile-leaves.png);
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: top center;
         width: 100%;
-        height: 54em;
+        height: 57.5vh;
         position: absolute;
         top: 0;
         left: 0;
@@ -21,6 +21,12 @@
         opacity: 0;
         animation: animation-mobile-leaves-top .85s forwards;
         animation-delay: .4s;
+
+        @include for-tablet {
+            background-size: contain;
+            background-repeat: repeat-x;
+            background-position: unset;
+        }
 
         @keyframes animation-mobile-leaves-top {
             0% {
@@ -49,6 +55,11 @@
         margin: auto;
         z-index: 0;
         animation: animation-mobile-plant-person .65s forwards;
+
+        @include for-tablet {
+            width: 36em;
+            height: 32em;
+        }
 
         @keyframes animation-mobile-plant-person {
             0% {
@@ -112,11 +123,31 @@
         position: relative;
         z-index: 1;
 
+        @include for-desktop-up {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            
+            @include spacing-internal-dektop;
+        }
+
         .container-logo {
+            width: 14em;
+            height: auto;
             margin-bottom: 3em;
             opacity: 0;
             animation: .35s animation-logo forwards;
             animation-delay: 1s;
+
+            @include for-desktop-up {
+                width: 18.5em;
+            }
+
+            * {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
 
             @keyframes animation-logo {
                 0% {
@@ -137,6 +168,16 @@
         .title {
             font-size: $font-02;
             color: $color-white;
+
+            @include for-tablet {
+                max-width: 15em;
+            }
+
+            @include for-desktop-up {
+                font-size: $font-00;
+                max-width: 7em;
+                line-height: 1.15em;
+            }
         }
     }
 }

@@ -1,0 +1,11 @@
+@mixin for-tablet {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin for-desktop {
+  @media (min-width: 960px) { @content; }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}

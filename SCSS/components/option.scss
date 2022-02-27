@@ -1,12 +1,39 @@
 .container-option {
+    @include for-tablet {
+        width: 100%;
+        max-width: 45em;
+        margin: auto;
+    }
+    
+    @include for-desktop {
+        width: 100%;
+        max-width: auto;
+        margin: auto;
+    }
+
+    @include for-desktop-up {
+        width: 100%;
+        max-width: 25em;
+        margin: 0 auto;
+    }
+
     .container-image {
         width: 100%;
         max-width: 8em;
         height: auto;
         margin-bottom: 0.85em;
 
-        .image,
-        img, svg {
+        @include for-tablet {
+            margin: 0 auto .85em;
+        }
+        
+        @include for-desktop {
+            margin: 0 0 1.35em;
+            width: 8em;
+            height: 8em;
+        }
+
+        * {
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -24,7 +51,7 @@
         border-radius: 5em;
         margin-top: 1.85em;
         width: 100%;
-        padding: 1em;
+        padding: 1.35em;
 
         &:after {
             content: '';

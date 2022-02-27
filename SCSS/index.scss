@@ -1,7 +1,8 @@
-@import "reset-styles.scss";
-@import "mixins.scss";
-@import "fonts-size.scss";
-@import "colors.scss";
+@import "helpers/reset-styles.scss";
+@import "helpers/mixins.scss";
+@import "helpers/fonts-size.scss";
+@import "helpers/colors.scss";
+@import "helpers/media-queries.scss";
 
 @import "components/header.scss";
 @import "components/option.scss";
@@ -18,9 +19,18 @@ body {
     background-color: $color-white;
     
     .main-panel {
+        @include spacing-internal;
         background-color: $color-white;
         width: 100%;
-        @include spacing-internal;
+        padding-bottom: 5.5em;
+
+        .container {
+            @include for-desktop-up {
+                width: 100%;
+                max-width: 980px;
+                margin: 0 auto;
+            }
+        }
 
         .wrapper-options {
             .row {
@@ -30,6 +40,21 @@ body {
                 .col + .col {
                     margin-top: 5.15em;
                 }
+                
+                @include for-desktop {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .col + .col {
+                        margin-top: 0;
+                        margin-left: 5em;
+
+                        @include for-desktop-up {
+                            margin-left: 10em;
+                        }
+                    }
+                }
             }
         }
     }
@@ -37,6 +62,14 @@ body {
     .container-result {
         overflow-x: hidden;
         background-color: $color-green-light-02;
+
+        .container {
+            @include for-desktop-up {
+                width: 100%;
+                max-width: 980px;
+                margin: 0 auto;
+            }
+        }
 
         .hide {
             display: none;

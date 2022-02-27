@@ -1,6 +1,10 @@
 .results {
     @include spacing-internal;
 
+    @include for-desktop-up {
+        @include spacing-internal-dektop;
+    }
+
     > .header {
         .container-image {
             width: 15em;
@@ -22,6 +26,11 @@
             max-width: 6em;
             margin-bottom: .45em;
             line-height: 1.1em;
+
+            @include for-desktop-up {
+                max-width: 12em;
+                margin-bottom: 1em;
+            }
         }
     }
     
