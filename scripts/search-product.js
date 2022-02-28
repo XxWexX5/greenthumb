@@ -18,7 +18,12 @@ function searchProduct() {
 
      const url = `https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${ valueSunlight }&water=${ valueWater }&pets=${ valuePets }`;
 
-     fetch(url)
+     if( 
+          (valueSunlight !== "") &&  
+          (valueWater !== "") &&  
+          (valuePets !== "")
+     ) {
+          fetch(url)
           .then((resp) => resp.json())
           .then(function(data) {
                const results = document.querySelector('.results');
@@ -30,6 +35,9 @@ function searchProduct() {
                if( data.length > 0 ) {
                     results.classList.remove("hide");
                     noResults.classList.add("hide");
+
+                    const distanceTop = results.offsetTop;
+                    smoothScrollTo(  0, distanceTop, 650 );
 
                     data.filter( element => element.staff_favorite ).map( productStaffFavorite => {
                          addingProductStaffFavorite( productStaffFavorite );
@@ -43,13 +51,14 @@ function searchProduct() {
                     noResults.classList.remove("hide");
                     results.classList.add("hide");
 
-                    const distanceTop = document.body.scrollTop;
-                    smoothScrollTo(  0, distanceTop + 500, 650 );
+                    const distanceTop = noResults.offsetTop;
+                    smoothScrollTo(  0, distanceTop, 650 );
                }
           })
           .catch(function( error ) {
                console.log(error);
           });
+     }
 }
 
 function smoothScrollTo(endX, endY, duration) {
@@ -61,7 +70,6 @@ function smoothScrollTo(endX, endY, duration) {
 
      duration = typeof duration !== 'undefined' ? duration : 400;
 
-     // Easing function
      const easeInOutQuart = (time, from, distance, duration) => {
        if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
        return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
@@ -75,7 +83,7 @@ function smoothScrollTo(endX, endY, duration) {
                clearInterval(timer);
           }
           window.scroll(newX, newY);
-     }, 1000 / 60); // 60 fps
+     }, 1000 / 60);
 };
 
 function addingTagStaffFavorite( card ) {
@@ -94,8 +102,6 @@ function addingTagStaffFavorite( card ) {
 }
 
 function creatingMainCardProduct( card, product ) {
-     console.log( product );
-
      const mainCard = document.createElement("main");
      mainCard.setAttribute("class", "main-card");
 
@@ -114,8 +120,6 @@ function creatingMainCardProduct( card, product ) {
 }
 
 function creatingFooterCardProduct( card, product ) {
-     console.log( product )
-
      const footerCard = document.createElement("footer");
      footerCard.setAttribute("class", "footer-card");
 
@@ -126,7 +130,7 @@ function creatingFooterCardProduct( card, product ) {
      col01.setAttribute("class", "col col-01");
      
      const h3 = document.createElement("h3");
-     const nodeH3 = document.createTextNode("Bunny ears cacti");
+     const nodeH3 = document.createTextNode(product.name);
      h3.setAttribute("class", 'title-product');
      h3.appendChild( nodeH3 );
 
