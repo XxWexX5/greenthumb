@@ -7,7 +7,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 
     @include for-desktop-up {
         padding-bottom: 0;
@@ -115,6 +115,11 @@
     }
 
     .main-card {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         .container-image {
             width: 100%;
             max-width: 15em;
