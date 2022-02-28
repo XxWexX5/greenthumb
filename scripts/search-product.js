@@ -35,18 +35,11 @@ function searchProduct( sunlight, water, pets ) {
 
                     addingTagStaffFavorite( card );
                     creatingMainCardProduct( card );       
-                    creatingFooterCardProduct( card );       
-
-                    // ✨ Staff favorite
+                    creatingFooterCardProduct( card );
 
                     const elementWrapperProducts = document.getElementById("wrapper-products");
                     elementWrapperProducts.appendChild(card);
 
-                    /*
-                    <div class="card card-product">
-                         
-                    </div>
-                    */
                }else {
                     noResults.classList.remove("hide");
                     results.classList.add("hide");
@@ -158,18 +151,40 @@ function creatingFooterCardProduct( card ) {
      const divWapperIcons = document.createElement("div");
      divWapperIcons.setAttribute("class", "wrapper-icons");
 
-     const containerImageDog = document.createElement("div");
-     containerImageDog.setAttribute("class", "container-image container-image-dog");
-     
-     const containerImageSun = document.createElement("div");
-     containerImageSun.setAttribute("class", "container-image container-image-sun");
-     
-     const containerImageWater = document.createElement("div");
-     containerImageWater.setAttribute("class", "container-image container-image-water");
+     const containerImagePets = document.createElement("div");
+     containerImagePets.setAttribute("class", "container-image container-image-pets");
 
-     divWapperIcons.appendChild( containerImageDog );
-     divWapperIcons.appendChild( containerImageSun );
-     divWapperIcons.appendChild( containerImageWater );
+     const containerImageNoPets = document.createElement("div");
+     containerImageNoPets.setAttribute("class", "container-image container-image-no-pets");
+     
+     const containerImageSunHigh = document.createElement("div");
+     containerImageSunHigh.setAttribute("class", "container-image container-image-sun-high");
+     
+     const containerImageSunLow = document.createElement("div");
+     containerImageSunLow.setAttribute("class", "container-image container-image-sun-low");
+     
+     const containerImageSunNo = document.createElement("div");
+     containerImageSunNo.setAttribute("class", "container-image container-image-sun-no");
+     
+     const containerImageWaterRarely = document.createElement("div");
+     containerImageWaterRarely.setAttribute("class", "container-image container-image-water-rarely");
+     
+     const containerImageWaterDaily = document.createElement("div");
+     containerImageWaterDaily.setAttribute("class", "container-image container-image-water-daily");
+     
+     const containerImageWaterRegularly = document.createElement("div");
+     containerImageWaterRegularly.setAttribute("class", "container-image container-image-water-regularly");
+
+     divWapperIcons.appendChild( containerImagePets );
+     divWapperIcons.appendChild( containerImageNoPets );
+
+     divWapperIcons.appendChild( containerImageSunHigh );
+     divWapperIcons.appendChild( containerImageSunLow );
+     divWapperIcons.appendChild( containerImageSunNo );
+
+     divWapperIcons.appendChild( containerImageWaterRarely );
+     divWapperIcons.appendChild( containerImageWaterDaily );
+     divWapperIcons.appendChild( containerImageWaterRegularly );
 
      col02Row02.appendChild( divWapperIcons );
      row02.appendChild( col02Row02 );

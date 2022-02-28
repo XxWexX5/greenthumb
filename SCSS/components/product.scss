@@ -50,9 +50,20 @@
                         width: 3.45em;
                         height: 3.2em;
                     }
+                    
+                    .container-image.container-no-dog {
+                        width: 3.45em;
+                        height: 3.2em;
+                    }
 
                     .container-image.container-image-sun {
                         width: 3.45em;
+                        height: 3.25em;
+                        margin-left: 1em;
+                    }
+
+                    .container-image.container-image-sun-low {
+                        width: 2.35em;
                         height: 3.25em;
                         margin-left: 1em;
                     }
@@ -142,6 +153,7 @@
 
         .wrapper-icons {
             display: flex;
+            align-items: center;
             margin-right: -0.65em;
 
             .container-image {
@@ -159,25 +171,52 @@
                     display: inline-block;
                 }
 
-                &.container-image-dog {
+                &.container-image-pets {
                     &:before {
-                        background-image: url(../images/icon-dog.svg);
+                        background-image: url(../images/icon-pets.svg);
                     }
                 }
 
-                &.container-image-water {
-                    width: 1.7em;
-
+                &.container-image-no-pets {
                     &:before {
-                        background-image: url(../images/icon-water.svg);
+                        background-image: url(../images/icon-no-pets.svg);
                     }
                 }
 
-                &.container-image-sun {
-                    width: 2.2em;
-
+                &.container-image-water-regularly {
                     &:before {
-                        background-image: url(../images/icon-sun.svg);
+                        background-image: url(../images/icon-water-regularly.svg);
+                    }
+                }
+
+                
+                &.container-image-water-daily {
+                    &:before {
+                        background-image: url(../images/icon-water-daily.svg);
+                    }
+                }
+
+                &.container-image-water-rarely {
+                    &:before {
+                        background-image: url(../images/icon-water-rarely.svg);
+                    }
+                }
+
+                &.container-image-sun-high {
+                    &:before {
+                        background-image: url(../images/icon-sun-high.svg);
+                    }
+                }
+
+                &.container-image-sun-low {
+                    &:before {
+                        background-image: url(../images/icon-sun-low.svg);
+                    }
+                }
+
+                &.container-image-sun-no {
+                    &:before {
+                        background-image: url(../images/icon-sun-no.svg);
                     }
                 }
             }
