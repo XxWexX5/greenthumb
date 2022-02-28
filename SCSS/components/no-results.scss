@@ -1,17 +1,24 @@
 .no-results {
     @include spacing-internal;
 
-    .box-text {
-        .title {
-            font-size: $font-01;
-            color: $color-gray-light-02;
-            margin-bottom: 0.35em;
+    .box-content {
+        @include for-tablet {
+            display: flex;
+            align-items: center;
         }
 
-        .text-description {
-            color: $color-gray-light-02;
-            font-size: $font-04;
-            margin-bottom: 2em;
+        .box-text {
+            .title {
+                font-size: $font-01;
+                color: $color-gray-light-02;
+                margin-bottom: 0.35em;
+            }
+
+            .text-description {
+                color: $color-gray-light-02;
+                font-size: $font-04;
+                margin-bottom: 2em;
+            }
         }
 
         .container-image {
