@@ -1,3 +1,5 @@
+@import "../fonts/Montserrat/stylesheet.css";
+
 @import "helpers/reset-styles.scss";
 @import "helpers/mixins.scss";
 @import "helpers/fonts-size.scss";
@@ -12,6 +14,7 @@
 
 body {
     font-family: "Montserrat", sans-serif;
+    font-weight: normal;
     font-size: 62.5%;
     color: $color-green-dark-02;
     text-rendering: optimizeLegibility;

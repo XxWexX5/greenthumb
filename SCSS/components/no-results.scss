@@ -1,6 +1,10 @@
 .no-results {
     @include spacing-internal;
 
+    @include for-desktop-up {
+        @include spacing-internal-dektop;
+    }
+
     .box-content {
         @include for-tablet {
             display: flex;
@@ -11,10 +15,11 @@
             .title {
                 font-size: $font-01;
                 color: $color-gray-light-02;
-                margin-bottom: 0.35em;
+                margin-bottom: 0.3em;
             }
 
             .text-description {
+                max-width: 13.5em;
                 color: $color-gray-light-02;
                 font-size: $font-04;
                 margin-bottom: 2em;

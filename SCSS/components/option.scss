@@ -43,6 +43,7 @@
     .label-text {
         font-size: $font-04;
         color: $color-gray-light;
+        font-weight: 300;
     }
 
     .wrapper-input {
@@ -75,6 +76,7 @@
             -moz-appearance: none;
             text-overflow: '';
             color: $color-gray-light;
+            font-weight: 300;
         }
     }
 }
