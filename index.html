@@ -45,7 +45,10 @@
       
                 <div class="wrapper-input">
                   <select id="options-sunlight" class="select" >
-                    <option class="option" label="Select...">Select...</option>
+                    <option class="option" label="Select..." value="" disabled selected>Select...</option>
+                    <option class="option" value="no">no</option>
+                    <option class="option" value="low">low</option>
+                    <option class="option" value="high">high</option>
                   </select>
                 </div>
               </div>
@@ -64,8 +67,11 @@
                 </label>
       
                 <div class="wrapper-input">
-                  <select id="options-sunlight" class="select" >
-                    <option class="option" label="Select...">Select...</option>
+                  <select id="options-water" class="select" >
+                    <option class="option" label="Select..." value="" disabled selected>Select...</option>
+                    <option class="option" value="regularly">regularly</option>
+                    <option class="option" value="daily">daily</option>
+                    <option class="option" value="rarely">rarely</option>
                   </select>
                 </div>
               </div>
@@ -84,8 +90,10 @@
                 </label>
       
                 <div class="wrapper-input">
-                  <select id="options-sunlight" class="select" >
-                    <option class="option" label="Select...">Select...</option>
+                  <select id="options-pets" class="select">
+                    <option class="option" label="Select..." value="" disabled selected>Select...</option>
+                    <option class="option" value="true">true</option>
+                    <option class="option" value="false">false</option>
                   </select>
                 </div>
               </div>
@@ -117,7 +125,7 @@
           </div>
         </div>
 
-        <div class="results">
+        <div class="results hide">
           <header class="header">
             <div class="container-image">
               <object id="logo" type="image/svg+xml" data="images/pick.svg">
@@ -598,4 +606,5 @@
 
   <script src="scripts/animation-svg.js"></script>
   <script src="scripts/soft-scrolling.js"></script>
+  <script src="scripts/search-product.js"></script>
 </html>
