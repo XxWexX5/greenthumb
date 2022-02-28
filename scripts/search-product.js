@@ -11,7 +11,7 @@ function getValueSelect( element ) {
      return element.options[element.selectedIndex].value;
 }
 
-function searchProduct( sunlight, water, pets ) {
+function searchProduct() {
      const valueSunlight = selectSunlight.options[selectSunlight.selectedIndex].value;
      const valueWater = selectWater.options[selectWater.selectedIndex].value;
      const valuePets = selectPets.options[selectPets.selectedIndex].value;
@@ -24,21 +24,20 @@ function searchProduct( sunlight, water, pets ) {
                const results = document.querySelector('.results');
                const noResults = document.querySelector('.no-results');
 
-               console.log( data );
+               const elementWrapperProducts = document.getElementById("wrapper-products");
+               elementWrapperProducts.innerHTML = "";
 
                if( data.length > 0 ) {
                     results.classList.remove("hide");
                     noResults.classList.add("hide");
 
-                    const card = document.createElement("div");
-                    card.setAttribute("class", "card card-product product-staff-favorite");
-
-                    addingTagStaffFavorite( card );
-                    creatingMainCardProduct( card );       
-                    creatingFooterCardProduct( card );
-
-                    const elementWrapperProducts = document.getElementById("wrapper-products");
-                    elementWrapperProducts.appendChild(card);
+                    data.filter( element => element.staff_favorite ).map( productStaffFavorite => {
+                         addingProductStaffFavorite( productStaffFavorite );
+                    })
+                    
+                    data.filter( element => !element.staff_favorite ).map( product => {
+                         addingProduct( product );
+                    })
 
                }else {
                     noResults.classList.remove("hide");
@@ -94,7 +93,9 @@ function addingTagStaffFavorite( card ) {
      return card.appendChild( tagFavorite );
 }
 
-function creatingMainCardProduct( card ) {
+function creatingMainCardProduct( card, product ) {
+     console.log( product );
+
      const mainCard = document.createElement("main");
      mainCard.setAttribute("class", "main-card");
 
@@ -103,8 +104,8 @@ function creatingMainCardProduct( card ) {
 
      const img = document.createElement("img");
      img.setAttribute("class", "image");
-     img.src = "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ficus-lyrata.png";
-     img.alt = "Image Product.";
+     img.src = product.url;
+     img.alt = product.name;
 
      divContainerImage.appendChild( img );
      mainCard.appendChild( divContainerImage );
@@ -112,7 +113,9 @@ function creatingMainCardProduct( card ) {
      return card.appendChild( mainCard );
 }
 
-function creatingFooterCardProduct( card ) {
+function creatingFooterCardProduct( card, product ) {
+     console.log( product )
+
      const footerCard = document.createElement("footer");
      footerCard.setAttribute("class", "footer-card");
 
@@ -124,7 +127,7 @@ function creatingFooterCardProduct( card ) {
      
      const h3 = document.createElement("h3");
      const nodeH3 = document.createTextNode("Bunny ears cacti");
-     h3.setAttribute("class", "title-product");
+     h3.setAttribute("class", 'title-product');
      h3.appendChild( nodeH3 );
 
      col01.appendChild( h3 );
@@ -138,7 +141,7 @@ function creatingFooterCardProduct( card ) {
      col01Row02.setAttribute("class", "col col-01");
 
      const strong = document.createElement("strong");
-     const nodeStrong = document.createTextNode("$25");
+     const nodeStrong = document.createTextNode(product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
      strong.setAttribute("class", "text-price");
      strong.appendChild( nodeStrong );
 
@@ -175,16 +178,27 @@ function creatingFooterCardProduct( card ) {
      const containerImageWaterRegularly = document.createElement("div");
      containerImageWaterRegularly.setAttribute("class", "container-image container-image-water-regularly");
 
-     divWapperIcons.appendChild( containerImagePets );
-     divWapperIcons.appendChild( containerImageNoPets );
+     if( !!product.toxicity ) {
+          divWapperIcons.appendChild( containerImageNoPets );
+     } else {
+          divWapperIcons.appendChild( containerImagePets );
+     }
 
-     divWapperIcons.appendChild( containerImageSunHigh );
-     divWapperIcons.appendChild( containerImageSunLow );
-     divWapperIcons.appendChild( containerImageSunNo );
+     if( product.sun === "high" ) {
+          divWapperIcons.appendChild( containerImageSunHigh );
+     } else if( product.sun === "low" ) {
+          divWapperIcons.appendChild( containerImageSunLow );
+     } else {
+          divWapperIcons.appendChild( containerImageSunNo );
+     }
 
-     divWapperIcons.appendChild( containerImageWaterRarely );
-     divWapperIcons.appendChild( containerImageWaterDaily );
-     divWapperIcons.appendChild( containerImageWaterRegularly );
+     if( product.water === 'rarely' ) {
+          divWapperIcons.appendChild( containerImageWaterRarely );
+     } else if( product.water === 'daily' ) {
+          divWapperIcons.appendChild( containerImageWaterDaily );
+     } else {
+          divWapperIcons.appendChild( containerImageWaterRegularly );
+     }
 
      col02Row02.appendChild( divWapperIcons );
      row02.appendChild( col02Row02 );
@@ -192,26 +206,27 @@ function creatingFooterCardProduct( card ) {
      footerCard.appendChild( row02 );
 
      return card.appendChild( footerCard );
+}
 
-     /*
-          <footer class="footer-card">
-               <div class="row row-02">
-                    <div class="col col-02">
-                         <div class="wrapper-icons">
-                              <div class="">
-                                   <img src="images/icon-dog.svg" class="image image-dog" alt="Icon dog." />
-                              </div>
-                              
-                              <div class="container-image container-image-sun">
-                                   <img src="images/icon-sun.svg" class="image image-sun" alt="Icon sun." />
-                              </div>
-                              
-                              <div class="container-image container-image-water">
-                                   <img src="images/icon-water.svg" class="image image-water" alt="Icon water." />
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </footer>
-     */
+function addingProductStaffFavorite( product ) {
+     const cardProduct = document.createElement("div");
+     cardProduct.setAttribute("class", "card card-product product-staff-favorite");
+
+     addingTagStaffFavorite( cardProduct );
+     creatingMainCardProduct( cardProduct, product );       
+     creatingFooterCardProduct( cardProduct, product );
+
+     const elementWrapperProducts = document.getElementById("wrapper-products");
+     elementWrapperProducts.appendChild(cardProduct);
+}
+
+function addingProduct( product ) {
+     const cardProduct = document.createElement("div");
+     cardProduct.setAttribute("class", "card card-product");
+
+     creatingMainCardProduct( cardProduct, product );       
+     creatingFooterCardProduct( cardProduct, product );
+
+     const elementWrapperProducts = document.getElementById("wrapper-products");
+     elementWrapperProducts.appendChild(cardProduct);
 }
