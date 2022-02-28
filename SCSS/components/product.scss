@@ -14,7 +14,7 @@
         padding-bottom: 0;
     }
 
-    &:nth-child(1) {
+    &.product-staff-favorite {
         .main-card .container-image {
             @include for-desktop-up {
                 margin-top: 1.45em;
@@ -46,7 +46,7 @@
                 }
 
                 .wrapper-icons {
-                    .container-image.container-image {
+                    .container-image.container-dog {
                         width: 3.45em;
                         height: 3.2em;
                     }
@@ -147,20 +147,38 @@
             .container-image {
                 width: 2.45em;
                 height: 2.2em;
+                position: relative;
+
+                &:before {
+                    content: '';
+                    background-size: contain;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    height: 100%;
+                    display: inline-block;
+                }
+
+                &.container-image-dog {
+                    &:before {
+                        background-image: url(../images/icon-dog.svg);
+                    }
+                }
 
                 &.container-image-water {
                     width: 1.7em;
+
+                    &:before {
+                        background-image: url(../images/icon-water.svg);
+                    }
                 }
 
                 &.container-image-sun {
                     width: 2.2em;
-                }
 
-                .image,
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
+                    &:before {
+                        background-image: url(../images/icon-sun.svg);
+                    }
                 }
             }
 
@@ -176,6 +194,7 @@
 
         .row-02 {
             justify-content: space-between;
+            align-items: center;
         }
     }
 }
