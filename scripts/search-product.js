@@ -61,31 +61,6 @@ function searchProduct() {
      }
 }
 
-function smoothScrollTo(endX, endY, duration) {
-     const startX = window.scrollX || window.pageXOffset;
-     const startY = window.scrollY || window.pageYOffset;
-     const distanceX = endX - startX;
-     const distanceY = endY - startY;
-     const startTime = new Date().getTime();
-
-     duration = typeof duration !== 'undefined' ? duration : 400;
-
-     const easeInOutQuart = (time, from, distance, duration) => {
-       if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
-       return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
-     };
-
-     const timer = setInterval(() => {
-          const time = new Date().getTime() - startTime;
-          const newX = easeInOutQuart(time, startX, distanceX, duration);
-          const newY = easeInOutQuart(time, startY, distanceY, duration);
-          if (time >= duration) {
-               clearInterval(timer);
-          }
-          window.scroll(newX, newY);
-     }, 1000 / 60);
-};
-
 function addingTagStaffFavorite( card ) {
      const tagFavorite = document.createElement("div");
      tagFavorite.setAttribute("class", "tag-favorite tag-showing");
@@ -215,6 +190,7 @@ function creatingFooterCardProduct( card, product ) {
 function addingProductStaffFavorite( product ) {
      const cardProduct = document.createElement("div");
      cardProduct.setAttribute("class", "card card-product product-staff-favorite");
+     cardProduct.setAttribute("id", `card-product-${ product.id }`);
 
      addingTagStaffFavorite( cardProduct );
      creatingMainCardProduct( cardProduct, product );       
@@ -227,6 +203,7 @@ function addingProductStaffFavorite( product ) {
 function addingProduct( product ) {
      const cardProduct = document.createElement("div");
      cardProduct.setAttribute("class", "card card-product");
+     cardProduct.setAttribute("id", `card-product-${ product.id }`);
 
      creatingMainCardProduct( cardProduct, product );       
      creatingFooterCardProduct( cardProduct, product );
@@ -234,3 +211,28 @@ function addingProduct( product ) {
      const elementWrapperProducts = document.getElementById("wrapper-products");
      elementWrapperProducts.appendChild(cardProduct);
 }
+
+function smoothScrollTo(endX, endY, duration) {
+     const startX = window.scrollX || window.pageXOffset;
+     const startY = window.scrollY || window.pageYOffset;
+     const distanceX = endX - startX;
+     const distanceY = endY - startY;
+     const startTime = new Date().getTime();
+
+     duration = typeof duration !== 'undefined' ? duration : 400;
+
+     const easeInOutQuart = (time, from, distance, duration) => {
+       if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+       return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+     };
+
+     const timer = setInterval(() => {
+          const time = new Date().getTime() - startTime;
+          const newX = easeInOutQuart(time, startX, distanceX, duration);
+          const newY = easeInOutQuart(time, startY, distanceY, duration);
+          if (time >= duration) {
+               clearInterval(timer);
+          }
+          window.scroll(newX, newY);
+     }, 1000 / 60);
+};
