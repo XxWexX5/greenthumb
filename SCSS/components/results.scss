@@ -71,6 +71,20 @@
             border-radius: 26em;
             padding: 1em 0;
             margin-top: 2em;
+            opacity: 0;
+            animation: 1s animation-button-top forwards;
+            animation-delay: 1.35s;
+
+            @keyframes animation-button-top {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-80px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
             &:hover {
                 opacity: .75;

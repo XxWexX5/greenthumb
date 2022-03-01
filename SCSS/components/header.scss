@@ -149,9 +149,6 @@
     .wrapper-move-down {
         display: inline-block;
         cursor: pointer;
-        opacity: 0;
-        animation: 1s animation-move-down forwards;
-        animation-delay: 1.85s;
         position: relative;
 
         &:after {
@@ -165,28 +162,26 @@
             margin-top: 2.35em;
             display: inline-block;
             transition: .3s transform ease-in-out;
-        }
+            opacity: 0;
+            animation: 1s animation-move-arrow-down forwards;
+            animation-delay: 2s;
+            transition: .6s all ease-in-out;
 
-        @keyframes animation-move-down {
-            0% {
-                opacity: 0;
-                transform: translateY(-45px);
+            @keyframes animation-move-arrow-down {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-65px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container-image-arrow-down {
-            transition: .45s transform ease-in-out;
         }
         
-        &:hover,
-        &:active,
-        &:focus {
+        &:hover {
             &:after {
-                transform: translateY(.85em);
+                margin-top: 4em;
             }
         }
     }
@@ -241,6 +236,20 @@
         .title {
             font-size: $font-02;
             color: $color-white;
+            opacity: 0;
+            animation: 1s animation-move-down forwards;
+            animation-delay: 1.85s;
+
+            @keyframes animation-move-down {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-45px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
 
             @include for-tablet {
                 max-width: 15em;

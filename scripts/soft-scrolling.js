@@ -1,13 +1,26 @@
 const arrowDown = document.getElementById("wrapper-move-down");
 const buttonTop = document.getElementById("button-go-top");
+const selectSun = document.getElementById("options-sunlight");
+const selectWater = document.getElementById("options-water");
+const selectDog = document.getElementById("options-pets");
 
 arrowDown.addEventListener("click", scrollToIdOnClick);
 buttonTop.addEventListener("click", scrollToTop);
 
+selectSun.addEventListener("change", function() {
+    const distanceTop = selectWater.parentElement.offsetTop;
+
+    smoothScrollTo(  0, distanceTop - 50, 650 );
+});
+
+selectWater.addEventListener("change", function() {
+    const distanceTop = selectDog.parentElement.offsetTop;
+
+    smoothScrollTo(  0, distanceTop - 50, 650 );
+});
+
 function scrollToTop( event ) {
     event.preventDefault();
-
-    console.log("Akii")
 
     smoothScrollTo(  0, 0, 650 );
 }
