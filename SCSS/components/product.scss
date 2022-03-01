@@ -8,6 +8,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    opacity: 0;
+    animation: 1s animation-card forwards;
+    animation-delay: 1s;
+
+    @keyframes animation-card {
+        0% {
+            opacity: 0;
+            transform: rotateY(90deg);
+        }
+        100% {
+            opacity: 1;
+            transform: rotateY(0);
+        }
+    }
 
     @include for-desktop-up {
         padding-bottom: 0;

@@ -1,3 +1,4 @@
+
 document.getElementById("logo").addEventListener("load", function() {
     const doc = this.getSVGDocument();
     let delay = 550;
@@ -121,4 +122,94 @@ document.getElementById("logo").addEventListener("load", function() {
         iterations: 1,
         fill: 'forwards'
     });
+});
+
+document.getElementById("image-sun").addEventListener("load", function() {
+    const doc = this.getSVGDocument();
+
+    var countTime = 0;
+
+    const line01 = doc.querySelector("#line-01");
+    gsap.fromTo( line01, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime) });
+    
+    const line02 = doc.querySelector("#line-02");
+    gsap.fromTo( line02, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line03 = doc.querySelector("#line-03");
+    gsap.fromTo( line03, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line04 = doc.querySelector("#line-04");
+    gsap.fromTo( line04, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++)});
+    
+    const line05 = doc.querySelector("#line-05");
+    gsap.fromTo( line05, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line06 = doc.querySelector("#line-06");
+    gsap.fromTo( line06, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line07 = doc.querySelector("#line-07");
+    gsap.fromTo( line07, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line08 = doc.querySelector("#line-08");
+    gsap.fromTo( line08, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line09 = doc.querySelector("#line-09");
+    gsap.fromTo( line09, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+    
+    const line10 = doc.querySelector("#line-10");
+    gsap.fromTo( line10, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+
+    const base = doc.querySelector("#base");
+    gsap.fromTo( base, { opacity: 0 }, { opacity: 1, duration: .65, delay: (.18 * countTime++) });
+
+    const glass = doc.querySelector("#glass");
+    gsap.fromTo( glass, { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: .65, delay: (.18 * countTime++), ease: 'back' });
+
+    const mouth = doc.querySelector("#mouth");
+    gsap.fromTo( mouth, { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: .65, delay: (.18 * countTime++), ease: 'bounce' });
+});
+
+document.getElementById("image-wateringcan").addEventListener("load", function() {
+    const doc = this.getSVGDocument();
+
+    const wateringcan = doc.querySelector("svg");
+    gsap.fromTo( wateringcan, { opacity: 0, rotation: 120, scale: 1.1 }, { opacity: 1, rotation: 0, scale: 1, duration: 1.35, delay: 2.3, ease: 'back' });
+    
+    const eyeRight = doc.querySelector("#eye-right");
+    gsap.fromTo( eyeRight, { opacity: 0, y: -15 }, { opacity: 1, y: 0, delay: 3, ease: 'bounce' });
+    
+    const eyeLeft = doc.querySelector("#eye-left");
+    gsap.fromTo( eyeLeft, { opacity: 0, y: -15 }, { opacity: 1, y: 0, delay: 3.35, ease: 'bounce' });
+    
+    const mouth = doc.querySelector("#mouth");
+    gsap.fromTo( mouth, { opacity: 0, y: 3 }, { opacity: 1, y: 0, delay: 3.7, ease: 'back' });
+});
+
+document.getElementById("image-dog").addEventListener("load", function() {
+    const doc = this.getSVGDocument();
+
+    const dog = doc.querySelector("svg");
+    gsap.fromTo( dog, { opacity: 0, x: -120, scale: 1.1 }, { opacity: 1, x: 0, scale: 1, duration: .85, delay: 4 });
+
+    const dogEar = doc.querySelector("#ear");
+    gsap.fromTo( dogEar, { rotate: 45, scale: 1.1 }, { rotate: 0, scale: 1, duration: .85, delay: 4.35 });
+
+    const dogEye = doc.querySelector("#eye");
+    gsap.fromTo( dogEye, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1.2, duration: .85, delay: 4.5 });
+
+    const dogNose = doc.querySelector("#nose");
+    gsap.fromTo( dogNose, { opacity: 0, x: 35 }, { opacity: 1, x: 0, duration: .85, delay: 4.5, ease: 'back' });
+
+    const dogTeeth = doc.querySelector("#teeth");
+    gsap.fromTo( dogTeeth, { opacity: 0, x: 35 }, { opacity: 1, x: 0, duration: .85, delay: 4.65, ease: 'back' });
+});
+
+document.getElementById("image-pick").addEventListener("load", function() {
+    const pick = this.getSVGDocument();
+    
+    const hand = pick.querySelector("#hand");
+    gsap.fromTo( hand, { opacity: 0, x: -120 }, { opacity: 1, x: 0, duration: .85, delay: .45, ease: 'back' });
+
+    const plant = pick.querySelector("#plant");
+    gsap.fromTo( plant, { opacity: 0, rotate: 200, x: 120, scale: 1.2 }, { opacity: 1, rotate: 0, x: 0, scale: 1, duration: 1.35, delay: 1.35, ease: 'back' });
 });
