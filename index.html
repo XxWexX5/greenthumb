@@ -14,16 +14,15 @@
   <body>
     <header class="header-main">
       <div class="container">
-        <div class="container-logo">
+        <div class="container-logo" aria-label="Logo Green Thumb." tabindex="0">
           <object id="logo" type="image/svg+xml" data="images/logo.svg">
             <img src="images/logo.svg" class="image image-logo" alt="Logo Green Thumb." />
           </object>
         </div>
 
-        <a href="#search" class="wrapper-move-down" id="wrapper-move-down">
+        <a href="#search" class="wrapper-move-down" id="wrapper-move-down" tabindex="0">
           <h2 class="title">Find your next green friend</h2>
         </a>
-
       </div>
     </header>
 
@@ -33,18 +32,18 @@
           <div class="row">
             <div class="col col-01">
               <div class="container-option">
-                <div class="container-image">
+                <div class="container-image" aria-label="Icon sun." tabindex="0">
                   <object id="image-sun" type="image/svg+xml" data="images/sun.svg">
                     <img src="images/sun.svg" class="image image-sun" alt="Image Sun." />
                   </object>
                 </div>
       
-                <label class="label-text" for="options-sunlight">
+                <label class="label-text" for="options-sunlight" tabindex="0">
                   <strong>1.</strong> Set the amount of <strong>sunlight</strong> your plant will get.
                 </label>
       
                 <div class="wrapper-input" id="wrapper-input-sunlight">
-                  <select id="options-sunlight" class="select" >
+                  <select id="options-sunlight" class="select" tabindex="0">
                     <option class="option" label="Select..." value="" disabled selected>Select...</option>
                     <option class="option" value="no">no</option>
                     <option class="option" value="low">low</option>
@@ -56,18 +55,18 @@
             
             <div class="col col-02">
               <div class="container-option">
-                <div class="container-image">
+                <div class="container-image" aria-label="Icon wateringcan." tabindex="0">
                   <object id="image-wateringcan" type="image/svg+xml" data="images/wateringcan.svg">
                     <img src="images/wateringcan.svg" class="image image-wateringcan" alt="Image Wateringcan." />
                   </object>
                 </div>
       
-                <label class="label-text" for="options-water">
+                <label class="label-text" for="options-water" tabindex="0">
                   <strong>2.</strong> How often do you want to <strong>water</strong> your plant?
                 </label>
       
                 <div class="wrapper-input" id="wrapper-input-water">
-                  <select id="options-water" class="select" >
+                  <select id="options-water" class="select" tabindex="0">
                     <option class="option" label="Select..." value="" disabled selected>Select...</option>
                     <option class="option" value="regularly">regularly</option>
                     <option class="option" value="daily">daily</option>
@@ -79,18 +78,18 @@
             
             <div class="col col-03">
               <div class="container-option" >
-                <div class="container-image">
+                <div class="container-image" aria-label="Icon dog." tabindex="0">
                   <object id="image-dog" type="image/svg+xml" data="images/dog.svg">
-                    <img src="images/dog.svg" class="image image-wateringcan" alt="Image dog." />
+                    <img src="images/dog.svg" class="image image-dog" alt="Image dog." />
                   </object>
                 </div>
       
-                <label class="label-text" for="options-pets">
+                <label class="label-text" for="options-pets" tabindex="0">
                   <strong>3.</strong> Do you have pets? Do they <strong>chew</strong> plants? 
                 </label>
       
                 <div class="wrapper-input" id="wrapper-input-pets">
-                  <select id="options-pets" class="select">
+                  <select id="options-pets" class="select" tabindex="0">
                     <option class="option" label="Select..." value="" disabled selected>Select...</option>
                     <option class="option" value="true">true</option>
                     <option class="option" value="false">false</option>
@@ -108,16 +107,16 @@
         <div class="no-results hide">
           <div class="box-content">
             <div class="box-text">
-              <h2 class="title">
+              <h2 class="title" tabindex="0">
                 No results yet…
               </h2>
 
-              <p class="text text-description">
+              <p class="text text-description" tabindex="0">
                 Use the filters above to find the plant that best fits your environment :)  
               </p>
             </div>
 
-            <div class="container-image">
+            <div class="container-image" tabindex="0">
               <object type="image/svg+xml" data="images/no-results.svg">
                 <img src="images/sun.svg" class="image image-no-results" alt="Image no results." />
               </object>
@@ -127,13 +126,13 @@
 
         <div class="results hide">
           <header class="header">
-            <div class="container-image">
+            <div class="container-image" tabindex="0">
               <object id="image-pick" type="image/svg+xml" data="images/pick.svg">
                 <img src="images/pick.svg" class="image image-pick" alt="Image pick." />
               </object>
             </div>
 
-            <h2 class="title">
+            <h2 class="title" tabindex="0">
               Our picks for you
             </h2>
           </header>
@@ -144,7 +143,7 @@
           </main>
 
           <footer class="footer">
-            <button class="button button-go-top" id="button-go-top">
+            <button class="button button-go-top" id="button-go-top" tabindex="0">
               <p class="text">
                 back to the top
               </p>

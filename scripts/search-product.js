@@ -68,6 +68,7 @@ function addingTagStaffFavorite( card ) {
      const strongFavorite = document.createElement("strong");
      const nodeStrongFavorite = document.createTextNode("✨ Staff favorite");
 
+     strongFavorite.setAttribute("tabindex", "0");
      strongFavorite.setAttribute("class", "text");
      strongFavorite.appendChild( nodeStrongFavorite );
 
@@ -84,6 +85,7 @@ function creatingMainCardProduct( card, product ) {
      divContainerImage.setAttribute("class", "container-image");
 
      const img = document.createElement("img");
+     img.setAttribute("tabindex", "0");
      img.setAttribute("class", "image");
      img.src = product.url;
      img.alt = product.name;
@@ -106,6 +108,7 @@ function creatingFooterCardProduct( card, product ) {
      
      const h3 = document.createElement("h3");
      const nodeH3 = document.createTextNode(product.name);
+     h3.setAttribute("tabindex", "0");
      h3.setAttribute("class", 'title-product');
      h3.appendChild( nodeH3 );
 
@@ -121,6 +124,7 @@ function creatingFooterCardProduct( card, product ) {
 
      const strong = document.createElement("strong");
      const nodeStrong = document.createTextNode(product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}));
+     strong.setAttribute("tabindex", "0");
      strong.setAttribute("class", "text-price");
      strong.appendChild( nodeStrong );
 
@@ -133,49 +137,65 @@ function creatingFooterCardProduct( card, product ) {
      const divWapperIcons = document.createElement("div");
      divWapperIcons.setAttribute("class", "wrapper-icons");
 
-     const containerImagePets = document.createElement("div");
-     containerImagePets.setAttribute("class", "container-image container-image-pets");
-
-     const containerImageNoPets = document.createElement("div");
-     containerImageNoPets.setAttribute("class", "container-image container-image-no-pets");
-     
-     const containerImageSunHigh = document.createElement("div");
-     containerImageSunHigh.setAttribute("class", "container-image container-image-sun-high");
-     
-     const containerImageSunLow = document.createElement("div");
-     containerImageSunLow.setAttribute("class", "container-image container-image-sun-low");
-     
-     const containerImageSunNo = document.createElement("div");
-     containerImageSunNo.setAttribute("class", "container-image container-image-sun-no");
-     
-     const containerImageWaterRarely = document.createElement("div");
-     containerImageWaterRarely.setAttribute("class", "container-image container-image-water-rarely");
-     
-     const containerImageWaterDaily = document.createElement("div");
-     containerImageWaterDaily.setAttribute("class", "container-image container-image-water-daily");
-     
-     const containerImageWaterRegularly = document.createElement("div");
-     containerImageWaterRegularly.setAttribute("class", "container-image container-image-water-regularly");
-
      if( !!product.toxicity ) {
+          const containerImageNoPets = document.createElement("div");
+          containerImageNoPets.setAttribute("aria-label", "No pet.");
+          containerImageNoPets.setAttribute("tabindex", "0");
+          containerImageNoPets.setAttribute("class", "container-image container-image-no-pets");
+
           divWapperIcons.appendChild( containerImageNoPets );
      } else {
+          const containerImagePets = document.createElement("div");
+          containerImagePets.setAttribute("aria-label", "With pet.");
+          containerImagePets.setAttribute("tabindex", "0");
+          containerImagePets.setAttribute("class", "container-image container-image-pets");
+
           divWapperIcons.appendChild( containerImagePets );
      }
 
      if( product.sun === "high" ) {
+          const containerImageSunHigh = document.createElement("div");
+          containerImageSunHigh.setAttribute("aria-label", "With sun high.");
+          containerImageSunHigh.setAttribute("tabindex", "0");
+          containerImageSunHigh.setAttribute("class", "container-image container-image-sun-high");
+
           divWapperIcons.appendChild( containerImageSunHigh );
      } else if( product.sun === "low" ) {
+          const containerImageSunLow = document.createElement("div");
+          containerImageSunLow.setAttribute("aria-label", "With sun low.");
+          containerImageSunLow.setAttribute("tabindex", "0");
+          containerImageSunLow.setAttribute("class", "container-image container-image-sun-low");
+
           divWapperIcons.appendChild( containerImageSunLow );
      } else {
+          const containerImageSunNo = document.createElement("div");
+          containerImageSunNo.setAttribute("aria-label", "With no sun.");
+          containerImageSunNo.setAttribute("tabindex", "0");
+          containerImageSunNo.setAttribute("class", "container-image container-image-sun-no");
+
           divWapperIcons.appendChild( containerImageSunNo );
      }
 
      if( product.water === 'rarely' ) {
+          const containerImageWaterRarely = document.createElement("div");
+          containerImageWaterRarely.setAttribute("aria-label", "Water rarely.");
+          containerImageWaterRarely.setAttribute("tabindex", "0");
+          containerImageWaterRarely.setAttribute("class", "container-image container-image-water-rarely");
+
           divWapperIcons.appendChild( containerImageWaterRarely );
      } else if( product.water === 'daily' ) {
+          const containerImageWaterDaily = document.createElement("div");
+          containerImageWaterDaily.setAttribute("aria-label", "Water daily.");
+          containerImageWaterDaily.setAttribute("tabindex", "0");
+          containerImageWaterDaily.setAttribute("class", "container-image container-image-water-daily");
+
           divWapperIcons.appendChild( containerImageWaterDaily );
      } else {
+          const containerImageWaterRegularly = document.createElement("div");
+          containerImageWaterRegularly.setAttribute("aria-label", "Water regularly.");
+          containerImageWaterRegularly.setAttribute("tabindex", "0");
+          containerImageWaterRegularly.setAttribute("class", "container-image container-image-water-regularly");
+
           divWapperIcons.appendChild( containerImageWaterRegularly );
      }
 
