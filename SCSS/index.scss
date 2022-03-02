@@ -20,6 +20,14 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     background-color: $color-white;
+
+    .container {
+        @include for-desktop-up {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+    }
     
     .main-panel {
         @include spacing-internal;
@@ -30,14 +38,6 @@ body {
         @include for-desktop-up {
             padding-top: 6em;
             padding-bottom: 7em;
-        }
-
-        .container {
-            @include for-desktop-up {
-                width: 100%;
-                max-width: 980px;
-                margin: 0 auto;
-            }
         }
 
         .wrapper-options {
@@ -70,14 +70,6 @@ body {
     .container-result {
         overflow-x: hidden;
         background-color: $color-green-light-02;
-
-        .container {
-            @include for-desktop-up {
-                width: 100%;
-                max-width: 980px;
-                margin: 0 auto;
-            }
-        }
 
         .hide {
             display: none;

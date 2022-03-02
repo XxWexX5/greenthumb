@@ -23,7 +23,9 @@ function searchProduct() {
           (valueWater !== "") &&  
           (valuePets !== "")
      ) {
-          fetch(url)
+          fetch(url, {
+               method: 'get'
+          })
           .then((resp) => resp.json())
           .then(function(data) {
                const results = document.querySelector('.results');
