@@ -1,16 +1,21 @@
-# basic-test-boilerplate
-Aqui você encontrará um boilerplate simples, que será disponibilizado para os candidatos do processo de front da Redventures Brasil.
+# Greenthumb by Wevison R.
+Find your next green friend! (っ ͡❛ ͜ʖ ͡❛)っ
 ---
+[![greenthumb.gif](https://i.postimg.cc/T1RcyWxw/greenthumb.gif)](https://postimg.cc/ftrdpyJn)
+## Atomic design
 
-## Como rodar localmente
+Let me show you a little about my __process__ to work:
 
-Antes de tudo, você precisa precisará ter o nodejs instalado em sua máquina, após isso basta rodar: 
+[![Whats-App-Image-2022-03-02-at-10-45-44-AM.jpg](https://i.postimg.cc/h47yNVyL/Whats-App-Image-2022-03-02-at-10-45-44-AM.jpg)](https://postimg.cc/G9dxyT1t)
 
-`yarn && yarn start` ou `npm install && npm start`
+## How to running the project
 
-## Como gerar a URL de preview
+__1.__ Clone the repository;
+__2.__ Running the code on terminal: `yarn && yarn start` or `npm install && npm start`;
+__3.__ Just it! =);
 
-Para gerar a URL de preview ou "fazer o deploy", basta rodar o comando `yarn deploy` ou `npm deploy`. Esse script já ira automaticamente fazer o build e subir os arquivos estáticos para o Surge.sh, como nas imagens abaixo:
+## URL preview
 
-![Screen Shot 2021-10-22 at 17 43 58](https://user-images.githubusercontent.com/92953864/138524410-480ed8d8-a567-4ba4-aa51-1b4337ce2ada.png)
-![Screen Shot 2021-10-22 at 17 45 44](https://user-images.githubusercontent.com/92953864/138524435-8724d434-1dac-4664-a5a1-9f7b32556f8c.png)
+Let me show you the **final project**: http://unbecoming-group.surge.sh/
+
+__Enjoy it!__ (ง︡'-'︠)ง
