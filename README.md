@@ -1,6 +1,9 @@
 # Greenthumb by Wevison R.
 Find your next green friend! (っ ͡❛ ͜ʖ ͡❛)っ
 
+## URL preview
+Let me show you the **final project**: https://frequent-hill.surge.sh/
+
 [![greenthumb.gif](https://i.postimg.cc/T1RcyWxw/greenthumb.gif)](https://postimg.cc/ftrdpyJn)
 ## Atomic design
 
@@ -15,9 +18,5 @@ __1.__ Clone the repository;
 __2.__ Running the code on terminal: `yarn && yarn start` or `npm install && npm start`;  
 
 __3.__ Just it! =);  
-
-## URL preview
-
-Let me show you the **final project**: https://frequent-hill.surge.sh/
 
 __Enjoy it!__ (ง︡'-'︠)ง
